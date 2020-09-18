@@ -11,6 +11,9 @@
     "test": "jest --config ./jest.config.json",
     "prepush": "git secrets --scan -r && npm run test"
   },
+  "hooks": {
+    "pre-push": "npm run test"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
