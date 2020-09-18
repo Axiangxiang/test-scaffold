@@ -9,7 +9,7 @@
     "cypress:run": "cypress run",
     "cypress": "concurrently \"parcel index.html\" \"cypress run\"",
     "test": "jest",
-    "coverage": "jest-coverage-ratchet && git add ./jest.config.json && git diff-index --quiet HEAD || git commit -m \"update coverage threshold\" --no-verify"
+    "coverage": "jest-coverage-ratchet && git add ./package.json && git diff-index --quiet HEAD || git commit -m \"update coverage threshold\" --no-verify"
   },
   "gitHooks": {
     "pre-push": "npm run coverage"
