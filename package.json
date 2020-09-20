@@ -21,10 +21,6 @@
     "src/**/*.js": [
       "prettier --write",
       "eslint --fix"
-    ],
-    "cypress/integration/**/*.js": [
-      "prettier --write",
-      "eslint --fix"
     ]
   },
   "keywords": [],
