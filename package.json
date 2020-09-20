@@ -18,7 +18,11 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "src/**/*.js cypress/integration/**/*.js": [
+    "src/**/*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "cypress/integration/**/*.js": [
       "prettier --write",
       "eslint --fix"
     ]
