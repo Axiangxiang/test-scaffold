@@ -1,6 +1,6 @@
 describe('Index page', () => {
   beforeEach(() => {
-    cy.visit('/');
+    cy.visit('/')
   });
 
   it('should render App', () => {
