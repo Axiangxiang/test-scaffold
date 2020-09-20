@@ -19,12 +19,12 @@
   },
   "lint-staged": {
     "src/**/*.js": [
-      "eslint --fix",
-      "prettier --write"
+      "prettier --write",
+      "eslint --fix"
     ],
     "cypress/integration/**/*.js": [
-      "eslint --fix",
-      "prettier --write"
+      "prettier --write",
+      "eslint --fix"
     ]
   },
   "keywords": [],
