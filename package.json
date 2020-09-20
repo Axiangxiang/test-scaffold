@@ -20,8 +20,11 @@
   "lint-staged": {
     "src/**/*.js": [
       "eslint --fix",
-      "prettier --write",
-      "git add"
+      "prettier --write"
+    ],
+    "cypress/integration/**/*.js": [
+      "eslint --fix",
+      "prettier --write"
     ]
   },
   "keywords": [],
