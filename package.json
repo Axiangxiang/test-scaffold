@@ -9,7 +9,7 @@
     "cypress:run": "cypress run",
     "cypress": "start-server-and-test start http://localhost:1234 cypress:run",
     "test": "jest",
-    "coverage": "jest-coverage-ratchet",
+    "coverage": "jest-coverage-ratchet && git add ./package.json && git diff-index --quiet HEAD || git commit -m \"update coverage threshold\"",
     "lint": "eslint src/app/**/*.js cypress/integration/**/*.js"
   },
   "gitHooks": {
@@ -66,7 +66,7 @@
     "coverageThreshold": {
       "global": {
         "lines": 0,
-        "statements": 0,
+        "statements": 100,
         "functions": 100,
         "branches": 100
       }
