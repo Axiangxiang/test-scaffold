@@ -7,11 +7,10 @@
     "start": "parcel index.html",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "cypress": "concurrently \"parcel index.html\" \"cypress run\"",
+    "cypress": "start-server-and-test start http://localhost:1234 cypress:run",
     "test": "jest",
-    "coverage": "jest-coverage-ratchet && git add ./package.json && git diff-index --quiet HEAD || git commit -m \"update coverage threshold\"",
-    "lint": "eslint src/**/*.js cypress/integration/**/*.js",
-    "lint-fix": "eslint --fix src/**/*.js cypress/integration/**/*.js"
+    "coverage": "jest-coverage-ratchet",
+    "lint": "eslint src/app/**/*.js cypress/integration/**/*.js"
   },
   "gitHooks": {
     "pre-push": "npm run coverage",
@@ -31,7 +30,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "concurrently": "^5.3.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
@@ -62,12 +60,13 @@
   "jest": {
     "collectCoverage": true,
     "coverageReporters": [
-      "json-summary"
+      "json-summary",
+      "text"
     ],
     "coverageThreshold": {
       "global": {
-        "lines": 100,
-        "statements": 100,
+        "lines": 0,
+        "statements": 0,
         "functions": 100,
         "branches": 100
       }
